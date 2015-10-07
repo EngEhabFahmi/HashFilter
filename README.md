@@ -1,5 +1,5 @@
-<<<<<<< HEAD
-=======
-# MS15-061
->>>>>>> 952685d02c3efdb084d35c0449721373988d9645
+
 # HashFilter
+
+need block process with its file's hash ? you can  use  this WFP library , to do it 
+just call User-Mode C++ functions it will do it in Kernel-Mode
