@@ -1,0 +1,24 @@
+
+TARGETNAME=NetworkMonitor
+TARGETTYPE=DRIVER
+
+INCLUDES=\
+   $(INCLUDES); \
+   $(DDK_INC_PATH); 
+
+TARGETLIBS=\
+    $(DDK_LIB_PATH)\ntoskrnl.lib \
+    $(DDK_LIB_PATH)\fwpkclnt.lib \
+    $(SDK_LIB_PATH)\uuid.lib
+MSC_OPTIMIZATION = /Od /Oi
+C_DEFINES=$(C_DEFINES) -DBINARY_COMPATIBLE=0 -DNT -DUNICODE -D_UNICODE -DNDIS60 -DNDIS_SUPPORT_NDIS6
+
+
+SOURCES= Driver.c \
+         Monitor.c \
+		 Rule.c \
+		 sha1.c
+
+RUN_WPP=$(SOURCES) -km
+
+
